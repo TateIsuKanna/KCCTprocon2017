@@ -31,6 +31,7 @@ class piece:
 
     def merge(self):
         print("Yuelia35 Test")
+        print("Yuelia35 Test 2")
 
     def rotate(self):
         print("PaperyKettleAsata TEST")
