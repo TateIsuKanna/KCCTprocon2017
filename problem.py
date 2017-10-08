@@ -5,6 +5,7 @@ class problem:
         self.pieces = pieces
         self.frame = frame
         self.merge_history = []
+        self.depth_max = 0
 
     def search_match_pieces(self,frame_and_hist):
         """枠にはまるピースを探索し、評価値をつけ、リストにまとめて返します。
@@ -89,7 +90,7 @@ class problem:
             if depth==len(self.pieces): #パズル完成
                 self.merge_history=history
                 return True
-            if depth > depth_max:#FIXME:おそらくdepth_maxアクセス出来ない
+            if depth > self.depth_max:
                 self.merge_history=history
                 self.gui_api.draw_history(self)
             return False
